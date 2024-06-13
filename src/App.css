@@ -1,9 +1,9 @@
-.root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  color: rgb(20, 11, 11);
-  /* user-select: none; */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
 }

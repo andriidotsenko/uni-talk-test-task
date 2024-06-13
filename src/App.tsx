@@ -1,34 +1,20 @@
-import { FC } from "react";
-import useContinuousCounter from "./hooks/useContinuousCounter";
+import { FC, Suspense } from "react";
 import "./App.css";
+import { Header } from "./components/Header/Header.tsx";
 
-const App: FC = () => {
-  const { count, startIncrement, startDecrement, stopCounter } =
-    useContinuousCounter(0);
+import { Container } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import { Loader } from "./components/Loader/Loader.tsx";
 
+export const App: FC = () => {
   return (
-    <div className="root" style={{ userSelect: "none" }}>
-      <div className="count">Count: {count}</div>
-      <div className="increment">
-        <button
-          onMouseDown={startIncrement}
-          onMouseUp={stopCounter}
-          onMouseLeave={stopCounter}
-        >
-          Increment
-        </button>
-      </div>
-      <div className="decrement">
-        <button
-          onMouseDown={startDecrement}
-          onMouseUp={stopCounter}
-          onMouseLeave={stopCounter}
-        >
-          Decrement
-        </button>
-      </div>
-    </div>
+    <>
+      <Container>
+        <Header />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </Container>
+    </>
   );
 };
-
-export default App;
