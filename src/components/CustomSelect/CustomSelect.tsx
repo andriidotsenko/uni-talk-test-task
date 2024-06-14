@@ -10,7 +10,7 @@ interface CustomSelectProps {
 
 export function CustomSelect({ sortParameter, onChange }: CustomSelectProps) {
   return (
-    <FormControl sx={{ m: 1, minWidth: "48%" }} size="medium">
+    <FormControl sx={{ m: 1, minWidth: "50%" }} size="medium">
       <InputLabel id="demo-select-small-label">Sort By</InputLabel>
       <Select
         labelId="demo-select-small-label"

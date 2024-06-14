@@ -67,7 +67,6 @@ export const PhotoCard: FC<PhotoCardProps> = ({ photo }) => {
           >
             {photo.description || photo.alt_description || "No description"}
           </Typography>
-
           <Typography variant="body1" color="text.secondary">
             Dimensions: {photo.width}x{photo.height}
           </Typography>
