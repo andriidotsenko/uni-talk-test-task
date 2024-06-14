@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 export const Header: FC = () => {
   return (
     <>
-      {" "}
       <motion.div
         initial={{ y: "-99%", opacity: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +24,7 @@ export const Header: FC = () => {
                 variant="body1"
                 noWrap
                 component="a"
-                href="#"
+                href="https://andriidotsenko.github.io/uni-talk-test-task/"
                 sx={{
                   mr: 0,
                   display: { xs: "flex" },
