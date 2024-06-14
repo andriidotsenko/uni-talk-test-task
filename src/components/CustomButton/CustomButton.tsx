@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 interface CustomButtonProps {
-  children: React.ReactNode;
+  children: ReactNode;
   onClick: () => void;
   isDisable?: boolean;
 }

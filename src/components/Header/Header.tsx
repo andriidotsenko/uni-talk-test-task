@@ -3,46 +3,55 @@ import { FC } from "react";
 import Link from "@mui/material/Link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { motion } from "framer-motion";
 
 export const Header: FC = () => {
   return (
     <>
-      <AppBar
-        position="static"
-        sx={{ backgroundColor: "#FF354E", boxShadow: "none" }}
+      {" "}
+      <motion.div
+        initial={{ y: "-99%", opacity: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{}} // Добавляем задержку в 0.5 секунды
       >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 0,
-                display: { xs: "flex", md: "1" },
-                fontFamily: "monospace",
-                fontWeight: 500,
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              Dotsenko image search
-            </Typography>
-            <div
-              className="wrapper"
-              style={{ display: "flex", gap: "10px", justifyContent: "end" }}
-            >
-              <Link href="https://github.com/andriidotsenko/uni-talk-test-task">
-                <GitHubIcon sx={{ color: "white" }} />
-              </Link>
-              <Link href="https://www.linkedin.com/in/dotsenko-andrii/">
-                <LinkedInIcon sx={{ color: "white" }} />
-              </Link>
-            </div>
-          </Toolbar>
-        </Container>
-      </AppBar>
+        <AppBar
+          position="static"
+          sx={{ backgroundColor: "#FF354E", boxShadow: "none" }}
+        >
+          <Container maxWidth="xl">
+            <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+              <Typography
+                variant="body1"
+                noWrap
+                component="a"
+                href="#"
+                sx={{
+                  mr: 0,
+                  display: { xs: "flex" },
+                  fontFamily: "Tiny5",
+                  fontWeight: 500,
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                Dotsenko TestTask
+              </Typography>
+              <div
+                className="wrapper"
+                style={{ display: "flex", gap: "10px", justifyContent: "end" }}
+              >
+                <Link href="https://github.com/andriidotsenko/uni-talk-test-task">
+                  <GitHubIcon sx={{ color: "white" }} />
+                </Link>
+                <Link href="https://www.linkedin.com/in/dotsenko-andrii/">
+                  <LinkedInIcon sx={{ color: "white" }} />
+                </Link>
+              </div>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </motion.div>
     </>
   );
 };

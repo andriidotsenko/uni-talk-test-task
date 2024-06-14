@@ -5,10 +5,10 @@ import { CustomSelect } from "../../components/CustomSelect/CustomSelect";
 import { CustomButton } from "../../components/CustomButton/CustomButton.tsx";
 
 const apiKey = "4HbzscYsx_uoGKA7F59n5SW-BokKePMAvwCEdTQd8q0";
-const PER_PAGE = 24;
+const PER_PAGE = 12;
 
 export const HomePage: FC = () => {
-  const [sortParameter, setSortParameter] = useState("latest");
+  const [sortParameter, setSortParameter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleChange = (event: SelectChangeEvent<string>) => {
@@ -34,8 +34,8 @@ export const HomePage: FC = () => {
       >
         <CustomSelect sortParameter={sortParameter} onChange={handleChange} />
         <CustomButton
-          onClick={() => setSortParameter("latest")}
-          isDisable={sortParameter === "latest"}
+          onClick={() => setSortParameter("")}
+          isDisable={sortParameter === ""}
         >
           Default
         </CustomButton>
