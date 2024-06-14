@@ -1,16 +1,18 @@
 import { Pagination, SelectChangeEvent } from "@mui/material";
 import { FC, useState } from "react";
-import UnsplashPhotos from "../../components/UnsplashPhotos/UnsplashPhotos";
+import { UnsplashPhotos } from "../../components/UnsplashPhotos/UnsplashPhotos";
 import { CustomSelect } from "../../components/CustomSelect/CustomSelect";
+import { CustomButton } from "../../components/CustomButton/CustomButton.tsx";
 
 const apiKey = "4HbzscYsx_uoGKA7F59n5SW-BokKePMAvwCEdTQd8q0";
+const PER_PAGE = 24;
 
 export const HomePage: FC = () => {
-  const [sortParametr, setSortParametr] = useState("latest");
+  const [sortParameter, setSortParameter] = useState("latest");
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleChange = (event: SelectChangeEvent<string>) => {
-    setSortParametr(event.target.value);
+    setSortParameter(event.target.value);
   };
 
   const handlePageChange = (
@@ -22,15 +24,27 @@ export const HomePage: FC = () => {
 
   return (
     <>
-      <CustomSelect sortParametr={sortParametr} onChange={handleChange} />
+      <div
+        className="wrapper"
+        style={{
+          marginTop: "20px",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+        }}
+      >
+        <CustomSelect sortParameter={sortParameter} onChange={handleChange} />
+        <CustomButton onClick={() => setSortParameter("latest")}>
+          Default
+        </CustomButton>
+      </div>
       <UnsplashPhotos
         apiKey={apiKey}
         currentPage={currentPage}
-        perPage={12}
-        orderBy={sortParametr}
+        perPage={PER_PAGE}
+        orderBy={sortParameter}
       />
       <Pagination
-        count={999}
+        count={Infinity}
         page={currentPage}
         onChange={handlePageChange}
         showFirstButton

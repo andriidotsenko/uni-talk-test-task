@@ -1,22 +1,21 @@
-import * as React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 interface CustomSelectProps {
-  sortParametr: string;
+  sortParameter: string;
   onChange: (event: SelectChangeEvent<string>) => void;
 }
 
-export function CustomSelect({ sortParametr, onChange }: CustomSelectProps) {
+export function CustomSelect({ sortParameter, onChange }: CustomSelectProps) {
   return (
-    <FormControl sx={{ m: 1, minWidth: "100%" }} size="small">
+    <FormControl sx={{ m: 1, minWidth: "48%" }} size="medium">
       <InputLabel id="demo-select-small-label">Sort By</InputLabel>
       <Select
         labelId="demo-select-small-label"
         id="demo-select-small"
-        value={sortParametr}
+        value={sortParameter}
         label="Sort By"
         onChange={onChange}
       >
