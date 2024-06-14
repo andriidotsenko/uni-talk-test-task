@@ -13,7 +13,7 @@ export const Header: FC = () => {
         initial={{ y: "-99%", opacity: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0 }}
-        transition={{}} // Добавляем задержку в 0.5 секунды
+        transition={{}}
       >
         <AppBar
           position="static"
