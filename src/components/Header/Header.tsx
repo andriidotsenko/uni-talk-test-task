@@ -1,6 +1,8 @@
 import { AppBar, Container, Toolbar, Typography } from "@mui/material";
-
-import { FC, useState } from "react";
+import { FC } from "react";
+import Link from "@mui/material/Link";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export const Header: FC = () => {
   return (
@@ -10,7 +12,7 @@ export const Header: FC = () => {
         sx={{ backgroundColor: "#FF354E", boxShadow: "none" }}
       >
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
+          <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
             <Typography
               variant="h5"
               noWrap
@@ -27,6 +29,17 @@ export const Header: FC = () => {
             >
               Dotsenko image search
             </Typography>
+            <div
+              className="wrapper"
+              style={{ display: "flex", gap: "10px", justifyContent: "end" }}
+            >
+              <Link href="https://github.com/andriidotsenko/uni-talk-test-task">
+                <GitHubIcon sx={{ color: "white" }} />
+              </Link>
+              <Link href="https://www.linkedin.com/in/dotsenko-andrii/">
+                <LinkedInIcon sx={{ color: "white" }} />
+              </Link>
+            </div>
           </Toolbar>
         </Container>
       </AppBar>

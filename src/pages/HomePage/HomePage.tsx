@@ -33,7 +33,10 @@ export const HomePage: FC = () => {
         }}
       >
         <CustomSelect sortParameter={sortParameter} onChange={handleChange} />
-        <CustomButton onClick={() => setSortParameter("latest")}>
+        <CustomButton
+          onClick={() => setSortParameter("latest")}
+          isDisable={sortParameter === "latest"}
+        >
           Default
         </CustomButton>
       </div>
