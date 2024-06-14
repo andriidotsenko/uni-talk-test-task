@@ -6,4 +6,10 @@
   box-shadow: none;
   outline: none;
   text-decoration: none;
+  --main-bg-color: pink;
+  --main-accent: #ff354e;
+  --secondary-accent: #fa4c60;
+  --main-text-color: black;
+  --grey: grey;
+  --grey-border: #d9d9d9;
 }

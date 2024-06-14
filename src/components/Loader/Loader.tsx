@@ -8,7 +8,3 @@ export const Loader: FC = () => {
     </div>
   );
 };
-
-Loader.propTypes = {};
-
-Loader.defaultProps = {};

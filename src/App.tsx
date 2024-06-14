@@ -9,8 +9,8 @@ import { Loader } from "./components/Loader/Loader.tsx";
 export const App: FC = () => {
   return (
     <>
+      <Header />
       <Container>
-        <Header />
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
