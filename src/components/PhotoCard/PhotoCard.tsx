@@ -29,7 +29,7 @@ export const PhotoCard: FC<PhotoCardProps> = ({ photo }) => {
       initial={{ scale: 0.9, opacity: 0 }}
       whileInView={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0 }}
-      transition={{}} // Добавляем задержку в 0.5 секунды
+      transition={{}}
     >
       <Card sx={{ maxWidth: 600 }}>
         <CardMedia
