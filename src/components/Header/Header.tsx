@@ -17,7 +17,7 @@ export const Header: FC = () => {
               variant="h5"
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              href="/"
               sx={{
                 mr: 0,
                 display: { xs: "flex", md: "1" },
