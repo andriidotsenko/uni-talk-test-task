@@ -1,4 +1,5 @@
 import styles from "./Loader.module.css";
+
 import { FC } from "react";
 
 export const Loader: FC = () => {
